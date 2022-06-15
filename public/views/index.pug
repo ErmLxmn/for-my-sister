@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' href='/css/index.css')
+.container
+  form(action='/api/answer1' method='post')
+    input#problem(type='text' name='problem')
+    button#submit Submit
+    h1
+      | Answer 1: 
+      span= answer1
+.container
+  form(action='/api/answer2' method='post')
+    input#problem1(type='text' name='problem1')
+    br
+    br
+    select#operator(name='operator')
+      option(value='add') add
+      option(value='sub') sub
+      option(value='mul') mul
+      option(value='div') div
+    br
+    br
+    input#problem2(type='text' name='problem2')
+    button#submit2 Submit
+    h1
+      | Answer 2: 
+      span= answer2
