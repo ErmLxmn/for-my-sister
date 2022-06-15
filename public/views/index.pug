@@ -14,10 +14,10 @@ input#display(type='hidden' readonly='' value= display)
 .main
  .container#numbers
    h1#title1  For Numbered Problems:
-   form(action='/api/answer1' method='post')
+   form(action='/api/answer1' method='post' autocomplete="off")
      label Problem: 
      br
-     input#problem(type='text' name='problem')
+     input#problem(type='text' name='problem' autocomplete="off")
      br
      br
      button#submit Submit

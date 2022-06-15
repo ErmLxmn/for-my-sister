@@ -14,10 +14,10 @@ input#display(type='hidden' readonly='' value= display)
 .main
  .container#words
    h1#title2  For Worded Problems:
-   form(action='/api/answer2' method='post')
+   form(action='/api/answer2' method='post' autocomplete="off")
      label First: 
      br
-     input#problem1(type='text' name='problem1')
+     input#problem1(type='text' name='problem1' autocomplete="off")
      br
      br
      label Operator: 
@@ -31,7 +31,7 @@ input#display(type='hidden' readonly='' value= display)
      br
      label Second: 
      br
-     input#problem2(type='text' name='problem2')
+     input#problem2(type='text' name='problem2' autocomplete="off")
      br
      br
      button#submit2 Submit
