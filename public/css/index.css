@@ -8,12 +8,15 @@
   border-top: none;
   text-align: left;
   padding: 3%;
+  width: 50%;
+}
+.form-control {
+  width: 100%;
 }
 
 input,
 select {
-  font: 1em sans-serif;
-  font-size: 32px;
+  font-size: 2em;
 }
 button {
   font-size: 32px;
@@ -36,4 +39,8 @@ span {
 }
 label {
   font-size: 20px;
+}
+.main {
+  display: flex;
+  width: 100%;
 }

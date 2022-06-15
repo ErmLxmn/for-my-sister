@@ -27,11 +27,11 @@ app.post('/api/answer2', function (req, res) {
   let word2 = req.body.problem2.split(' ')
 
   word1 = word1.map(function (w) {
-    return 'fourthy' === w ? 'forty' : w
+    return 'fourthy' === w ? 'forty' : w && 'fifthy' === w ? 'fifty' : w
   })
 
   word2 = word2.map(function (w) {
-    return 'fourthy' === w ? 'forty' : w
+    return 'fourthy' === w ? 'forty' : w && 'fifthy' === w ? 'fifty' : w
   })
 
   let problem = []
