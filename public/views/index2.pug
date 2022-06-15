@@ -8,25 +8,40 @@ head
   link(rel='stylesheet' href='/css/index.css')
 input#display(type='hidden' readonly='' value= display)
 .nav 
- select#selection(name="select" value= select) 
-  option(value="numbers") numbers
-  option(value= "words") words
+ select#selection(name="select") 
+  option(value="numbers" selected=select1) numbers
+  option(value="words" selected=select2) words
 .main
- .container#numbers
-   h1#title1  For Numbered Problems:
-   form(action='/api/answer1' method='post')
-     label Problem: 
+ .container#words
+   h1#title2  For Worded Problems:
+   form(action='/api/answer2' method='post')
+     label First: 
      br
-     input#problem(type='text' name='problem')
+     input#problem1(type='text' name='problem1')
      br
      br
-     button#submit Submit
-   h1  Answer 1: 
-   input#answer1(type='text' readonly='' value= answer1)
+     label Operator: 
+     br
+     select#operator(name='operator')
+       option(value='add') add
+       option(value='sub') sub
+       option(value='mul') mul
+       option(value='div') div
+     br
+     br
+     label Second: 
+     br
+     input#problem2(type='text' name='problem2')
+     br
+     br
+     button#submit2 Submit
+   h1  Answer 2: 
+   br
+   input#answer2(type='text' readonly='' value= answer2)
    br
    br
-   button#copy1 Copy
-   span#myTooltip1
+   button#copy2 Copy
+   span#myTooltip2
 script.
   $(document).ready(function (){
   let copy1 = $("#answer1").val()

@@ -17,9 +17,27 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
+app.get('/options', function (req, res) {
+  let display = {
+    index: 'index',
+    select1: true,
+    select2: false,
+    display: 'numbers',
+  }
+
+  if (req.query.display === 'words') {
+    display.index = 'index2'
+    display.select1 = false
+    display.select2 = true
+    display.display = 'words'
+  }
+
+  res.render(display.index, display)
+})
+
 app.post('/api/answer1', function (req, res) {
   let answer = obj.solverMain(req.body.problem)
-  res.render('index', { answer1: answer })
+  res.render('index', { answer1: answer, display: 'numbers', select1: true })
 })
 
 app.post('/api/answer2', function (req, res) {
@@ -43,7 +61,7 @@ app.post('/api/answer2', function (req, res) {
 
   let newProblem = problem.join(' ')
   let answer = obj.solverMain(newProblem)
-  res.render('index', { answer2: answer })
+  res.render('index2', { answer2: answer, display: 'words', select2: true })
 })
 
 app.listen(process.env.PORT || 5000)

@@ -4,7 +4,6 @@ obj.solverMain = function (problems) {
   problems = problems.trim()
   let problem = problems.split(' ')
   let value1, op, value2
-  console.log(problems)
   if (problem[0] === 'What') {
     value1 = Number(problem[2])
     op = problem[3]
@@ -16,7 +15,6 @@ obj.solverMain = function (problems) {
   }
 
   let ans = solve(value1, op, value2)
-  console.log(ans)
 
   if (!ans) {
     ans = 'Invalid Input'
