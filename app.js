@@ -32,4 +32,4 @@ app.post('/api/answer2', function (req, res) {
   res.render('index', { answer2: answer })
 })
 
-app.listen(5000)
+app.listen(process.env.PORT || 5000)
