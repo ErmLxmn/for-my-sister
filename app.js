@@ -22,10 +22,23 @@ app.post('/api/answer1', function (req, res) {
 })
 
 app.post('/api/answer2', function (req, res) {
+  let word1 = req.body.problem1.split(' ')
+  let word2 = req.body.problem2.split(' ')
+
+  word1 = word1.map(function (w) {
+    return 'fourthy' === w ? 'forty' : w
+  })
+
+  word2 = word2.map(function (w) {
+    return 'fourthy' === w ? 'forty' : w
+  })
+
   let problem = []
-  problem.push(wordsToNumbers(req.body.problem1))
+  word1 = word1.join(' ')
+  word2 = word2.join(' ')
+  problem.push(wordsToNumbers(word1))
   problem.push(req.body.operator)
-  problem.push(wordsToNumbers(req.body.problem2))
+  problem.push(wordsToNumbers(word2))
 
   let newProblem = problem.join(' ')
   let answer = obj.solverMain(newProblem)
