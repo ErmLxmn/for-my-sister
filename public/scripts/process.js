@@ -4,8 +4,6 @@ obj.solverMain = function (problems) {
   let problem = problems.split(' ')
   let value1, op, value2
 
-  console.log(problem)
-
   if (problem[0] === 'What') {
     value1 = Number(problem[2])
     op = problem[3]

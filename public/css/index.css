@@ -5,6 +5,7 @@
 .container {
   background-color: #ddd;
   border: 1px solid black;
+  border-top: none;
   text-align: left;
   padding: 3%;
 }
@@ -23,4 +24,16 @@ h1 {
 }
 select {
   width: 250px;
+}
+
+span {
+  margin: 15px;
+}
+
+#title1,
+#title2 {
+  margin-bottom: 10px;
+}
+label {
+  font-size: 20px;
 }

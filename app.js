@@ -5,6 +5,7 @@ const $ = require('jquery')
 var bodyParser = require('body-parser')
 const obj = require('./public/scripts/process.js')
 const { wordsToNumbers } = require('words-to-numbers')
+const clipboard = import('clipboardy')
 
 app.set('views', path.join(__dirname, 'public') + '/views')
 app.set('view engine', 'pug')

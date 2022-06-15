@@ -4,18 +4,28 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
+  script(src='/scripts/jquery.js')
   link(rel='stylesheet' href='/css/index.css')
 .container
+  h1#title1  For Numbered Problems:
   form(action='/api/answer1' method='post')
+    label Problem: 
+    br
     input#problem(type='text' name='problem')
     button#submit Submit
-    h1
-      | Answer 1: 
-      span= answer1
+  h1  Answer 1: 
+  input#answer1(type='number' readonly='' value= answer1)
+  button#copy1 Copy
+  span#myTooltip1
 .container
+  h1#title2  For Worded Problems:
   form(action='/api/answer2' method='post')
+    label First: 
+    br
     input#problem1(type='text' name='problem1')
     br
+    br
+    label Operator: 
     br
     select#operator(name='operator')
       option(value='add') add
@@ -24,8 +34,31 @@ head
       option(value='div') div
     br
     br
+    label Second: 
+    br
     input#problem2(type='text' name='problem2')
     button#submit2 Submit
-    h1
-      | Answer 2: 
-      span= answer2
+  h1  Answer 2: 
+  br
+  input#answer2(type='number' readonly='' value= answer2)
+  button#copy2 Copy
+  span#myTooltip2
+script.
+  $(document).ready(function (){
+  let copy1 = $("#answer1").val()
+  let copy2 = $("#answer2").val()
+  $("#copy1").on('click' ,function () {
+      var copyText = $("#answer1").val()
+      navigator.clipboard.writeText(copyText)
+      var tooltip = $("#myTooltip1");
+      tooltip.html("Copied: " + copyText)
+      tooltip.fadeOut(1000)
+  })
+  $("#copy2").on('click', function () {
+      var copyText = $("#answer2").val()
+      navigator.clipboard.writeText(copyText)
+      var tooltip = $("#myTooltip2");
+      tooltip.html("Copied: " + copyText)
+      tooltip.fadeOut(1000)
+  })
+  })
