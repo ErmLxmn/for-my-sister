@@ -60,10 +60,7 @@ app.post('/api/answer2', function (req, res) {
     .map(function (w) {
       w = w.replace('fourthy', 'forty')
       w = w.replace('fifthy', 'fifty')
-      return w
-    })
-    .map((value) => {
-      return wordsToNumbers(value)
+      return wordsToNumbers(w)
     })
   let newProblem = problem.join(' ')
   let answer = obj.solverMain(newProblem)
@@ -80,10 +77,7 @@ app.post('/api/answer3', function (req, res) {
     .map((w) => {
       w = w.replace('fourthy', 'forty')
       w = w.replace('fifthy', 'fifty')
-      return w
-    })
-    .map((value) => {
-      return wordsToNumbers(value)
+      return wordsToNumbers(w)
     })
   let newProblem = newArr.join(' ')
   let answer = obj.solverMain(newProblem)
