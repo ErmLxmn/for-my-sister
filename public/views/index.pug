@@ -9,8 +9,9 @@ head
 input#display(type='hidden' readonly='' value= display)
 .nav 
  select#selection(name="select" value= select) 
-  option(value="numbers") numbers
-  option(value= "words") words
+  option(value="numbers" selected=numbers) numbers
+  option(value= "words" selected=words) words
+  option(value="words2" selected=words2) words2
 .main
  .container#numbers
    h1#title1  For Numbered Problems:

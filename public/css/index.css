@@ -47,3 +47,8 @@ label {
 .nav {
   margin: 10px;
 }
+
+#fulltext {
+  font-size: 20px;
+  width: 100%;
+}

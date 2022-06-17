@@ -15,42 +15,28 @@ input#display(type='hidden' readonly='' value= display)
 .main
  .container#words
    h1#title2  For Worded Problems:
-   form(action='/api/answer2' method='post' autocomplete="off")
-     label First: 
+   form(action='/api/answer3' method='post' autocomplete="off")
+     label Full Text: 
      br
-     input#problem1(type='text' name='problem1' autocomplete="off")
-     br
-     br
-     label Operator: 
-     br
-     select#operator(name='operator')
-       option(value='add') add
-       option(value='sub') sub
-       option(value='mul') mul
-       option(value='div') div
+     textarea#fulltext(name="fulltext", cols="30", rows="10") 
      br
      br
-     label Second: 
-     br
-     input#problem2(type='text' name='problem2' autocomplete="off")
-     br
-     br
-     button#submit2 Submit
-   h1  Answer 2: 
+     button#submit3 Submit
+   h1  Answer 3: 
    br
-   input#answer2(type='text' readonly='' value= answer2)
+   input#answer3(type='text' readonly='' value= answer3)
    br
    br
-   button#copy2 Copy
-   span#myTooltip2
+   button#copy3 Copy
+   span#myTooltip3
 script.
   $(document).ready(function (){
-  let copy2 = $("#answer2").val()
-  $("#copy2").on('click', function () {
-      var copyText = $("#answer2").val()
+  let copy3 = $("#answer3").val()
+  $("#copy3").on('click', function () {
+      var copyText = $("#answer3").val()
       navigator.clipboard.writeText(copyText)
       console.log(navigator.clipboard)
-      var tooltip = $("#myTooltip2");
+      var tooltip = $("#myTooltip3");
       tooltip.html("Copied: " + copyText)
       tooltip.fadeOut(1000)
   })
