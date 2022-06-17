@@ -39,7 +39,7 @@ app.get('/options', function (req, res) {
     display.numbers = false
     display.words = false
     display.words2 = true
-    display.display = 'words'
+    display.display = 'words2'
   }
 
   res.render(display.index, display)
