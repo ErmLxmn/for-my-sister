@@ -40,6 +40,11 @@ script.
       tooltip.html("Copied: " + copyText)
       tooltip.fadeOut(1000)
   })
+   $(document).on('keypress',function(e) {
+    if(e.which == 13 && $('#fulltext').val().trim() !== '') {
+      $('#submit3').trigger('click')
+    }
+  });
   $('#selection').on('change', function (){
     window.location = window.location.origin + "/options?display=" + $(this).val() 
   })

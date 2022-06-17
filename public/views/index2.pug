@@ -54,6 +54,11 @@ script.
       tooltip.html("Copied: " + copyText)
       tooltip.fadeOut(1000)
   })
+   $(document).on('keypress',function(e) {
+    if(e.which == 13 && $('#problem1').val().trim() !== '' && $('#problem2').val().trim() !== '') {
+      $('#submit2').trigger('click')
+    }
+  });
   $('#selection').on('change', function (){
     window.location = window.location.origin + "/options?display=" + $(this).val() 
   })
