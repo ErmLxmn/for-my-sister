@@ -30,18 +30,10 @@ input#display(type='hidden' readonly='' value= display)
 script.
   $(document).ready(function (){
   let copy1 = $("#answer1").val()
-  let copy2 = $("#answer2").val()
   $("#copy1").on('click' ,function () {
       var copyText = $("#answer1").val()
       navigator.clipboard.writeText(copyText)
       var tooltip = $("#myTooltip1");
-      tooltip.html("Copied: " + copyText)
-      tooltip.fadeOut(1000)
-  })
-  $("#copy2").on('click', function () {
-      var copyText = $("#answer2").val()
-      navigator.clipboard.writeText(copyText)
-      var tooltip = $("#myTooltip2");
       tooltip.html("Copied: " + copyText)
       tooltip.fadeOut(1000)
   })
